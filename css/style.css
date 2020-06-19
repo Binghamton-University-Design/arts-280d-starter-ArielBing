@@ -1,35 +1,46 @@
-body {
-	background-color: #ffffff;
-	color: #333333;
-	font-family: 'Roboto';
+/* vars */
+:root {
+  --background-color: #fff;
+  --body-color: #111;
 }
 
-h1, h2, h3, h4{
-	margin: 0;
-	font-family: 'Roboto', sans-serif;
+body {
+  background-color: var(--background-color);
+  color: var(--body-color);
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.5;
+}
+
+/*GENERAL*/
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-	font-size: 4.2rem;
+  font-size: 4.2rem
 }
 
 h2 {
-	font-size: 2.6rem;
+  font-size: 2.6rem;
 }
 
 h3 {
-	font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 h4 {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 #wrapper {
-	margin: 2rem auto;
-	max-width: 1220px;
-	padding: 0 2rem;
+  margin: 2rem auto;
+  max-width: 1220px;
+  padding: 0 2rem;
 }
+
+/*MASTHEAD*/
 
 #masthead, #main {
   margin-bottom: 2rem;
@@ -40,7 +51,7 @@ h4 {
 }
 
 #logo a {
-  color: #000;
+  color: var(--body-color);
   text-decoration: none;
   display: flex;
   width: 100%;
@@ -56,23 +67,25 @@ h4 {
 
 #logo svg {
   margin-right: .25rem;
-  height: 1.6rem;
+  height: 3.6rem;
   width: auto;
 }
 
+/*NAV*/
+
 #nav a { 
-color: #000; 
+color: var(--body-color);
 font-weight: 300; 
 letter-spacing: 2px; 
 text-decoration-color: transparent; 
 display: inline-block; 
 width: 100%; 
 text-align: center; 
-transition: text-decoration-color .4s cubic-bezier(.694, .0482, .335, 1);
+transition: text-decoration-color .3s ease-in-out;
 }
 
 #nav a:hover { 
-  text-decoration-color: #000; 
+  text-decoration-color: var(--body-color);
 }
 
 #nav.active {
@@ -124,7 +137,7 @@ transition: text-decoration-color .4s cubic-bezier(.694, .0482, .335, 1);
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
-    background-color: #000; }
+    background-color: var(--body-color); }
 
 .hamburger-box {
   width: 24px;
@@ -139,7 +152,7 @@ transition: text-decoration-color .4s cubic-bezier(.694, .0482, .335, 1);
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 24px;
     height: 2px;
-    background-color: #000;
+    background-color: var(--body-color);
     border-radius: 0px;
     position: absolute;
     transition-property: transform;
@@ -182,7 +195,8 @@ transition: text-decoration-color .4s cubic-bezier(.694, .0482, .335, 1);
   height: 70vh;
 }
 
-#work h3 {
+#work h3, #writing h3 {
+  letter-spacing: 1px;
   margin-bottom: 2rem;
 }
 
@@ -192,7 +206,7 @@ transition: text-decoration-color .4s cubic-bezier(.694, .0482, .335, 1);
   position: relative;
   width: 100%; 
   padding-top: calc((1 / 1) * 100%);
-  background-color: #000;
+  background-color: var(--body-color);
 }
 
 .work-item .inner {
@@ -231,6 +245,36 @@ transition: text-decoration-color .4s cubic-bezier(.694, .0482, .335, 1);
   height: 100%;
 }
 
+.writing-item .date-holder {
+  margin-bottom: .25em;
+}
+
+.writing-item .date {
+  margin: 0;
+  font-size: .85rem;
+  padding: 0 4px;
+  color: var(--background-color);
+  display: inline-block;
+  background-color: var(--body-color);
+}
+
+.writing-item h2 a {
+  color: var(--body-color);
+  text-decoration-color: transparent; 
+  transition: text-decoration-color .3s ease-in-out;
+}
+
+.writing-item h2 a:hover {
+  color: var(--body-color);
+  text-decoration-color: var(--body-color); 
+}
+
+.writing-item p a {
+  color: var(--body-color);
+  text-decoration-color: var(--body-color); 
+}
+
+
 /*FOOTER*/
 
 #footer {
@@ -240,20 +284,27 @@ transition: text-decoration-color .4s cubic-bezier(.694, .0482, .335, 1);
 
 /*RESPONSIVE*/
 
+/* for variable type sizing */
+@media screen and (min-width: 320px) {
+  body {
+    font-size: calc(12px + 4 * ((100vw - 320px) / 960));
+  }
+}
+
 @media all and (max-width: 699px) { 
   #nav-button {
     display: block;
   }
   #nav {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--body-color);
+    padding-bottom: 1rem;
     display: none;
   }
   #nav li { 
     width: 100%; 
     flex-basis: 100%;
     margin-bottom: 1rem;
-  }
-
+  } 
   #intro-holder h1 {
     font-size: 3.2rem
   }
@@ -279,5 +330,3 @@ transition: text-decoration-color .4s cubic-bezier(.694, .0482, .335, 1);
 body {
     font-size: 18px;
   }
-
-}
