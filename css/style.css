@@ -229,7 +229,7 @@ transition: text-decoration-color .3s ease-in-out;
 
 .work-item .inner .work-inside {
   transition: opacity .3s ease-in-out;
-  opacity: 0;
+  opacity: 0.5;
   color: #fff;
   padding: 2rem;
   width: 100%;
@@ -306,9 +306,9 @@ transition: text-decoration-color .3s ease-in-out;
   padding-top: calc((9 / 16) * 100%)
 }
 
-#portfolio .work-item .inner .work-inside{
+/*#portfolio .work-item .inner .work-inside{
   opacity: 3;
-}
+}*/
 
 #portfolio p a {
   color: var(--body-color);
